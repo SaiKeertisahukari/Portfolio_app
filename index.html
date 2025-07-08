@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Keerti Sahukari</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafb;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #3b82f6;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 5px #000;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      font-weight: 300;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: white;
+      color: #1f2937;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease-in-out;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #3b82f6;
+      padding-left: 1rem;
+      color: #1f2937;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-image img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #3b82f6;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-text ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .about-text li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .resume-button {
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: background-color 0.3s;
+    }
+
+    .resume-button:hover {
+      background-color: #2563eb;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 2px solid #ccc;
+    }
+
+    .timeline-entry {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+    }
+
+    .timeline-content {
+      background: #f3f4f6;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      background-color: #1f2937;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .nav-links a {
+        margin-left: 1rem;
+        font-size: 1rem;
+      }
+
+      .nav-brand {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-brand">Personal Website</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p>Hi!</p>
+    <h1>Sai Keerti Sahukari</h1>
+    <p>Welcome to this World</p>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="profile.jpg" alt="Sai Keerti Sahukari">
+      </div>
+      <div class="about-text">
+        <ul>
+          <li><strong>From:</strong> Srikakulam, India</li>
+          <li><strong>Lives In:</strong> Tadepalligudem, India</li>
+          <li><strong>Gender:</strong> Female</li>
+          <li><strong>Looking for:</strong> Internship Opportunities</li>
+        </ul>
+        <a href="resume.pdf" download class="resume-button">📄 Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+   <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <strong>B.Tech in Electrical and Electronics Engineering</strong><br>
+          National Institute of Technology, Andhra Pradesh<br>
+          CGPA: 9.27<br>
+          2022 – Present
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <strong>B.Tech in Computer Science and Engineering (Minor Degree)</strong><br>
+          National Institute of Technology, Andhra Pradesh<br>
+          2022 – Present
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <strong>Intermediate (Class XII)</strong><br>
+          Sri Chaitanya College<br>
+          CGPA: 9.5<br>
+          2020 – 2022
+        </div>
+      </div>
+      <div class="timeline-entry">
+        <div class="timeline-content">
+          <strong>Secondary School (Class X)</strong><br>
+          Sri Chaitanya School<br>
+          GPA: 10.0<br>
+          2019 – 2020
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <strong>Smart Heart Monitoring System</strong><br />
+        Built a real-time heart disease prediction system using ML models trained on UCI Heart Disease Dataset. Integrated hardware sensors for live data collection and achieved 96% prediction accuracy using Random Forest. Useful for proactive alerts in health monitoring.
+      </li>
+      <li style="margin-top: 1rem;">
+        <strong>Land Segmentation using SegFormer B3</strong><br />
+        Used PyTorch to implement semantic segmentation on satellite imagery. Leveraged SegFormer B3 with pretrained weights for accurate classification of land cover types, enabling precise mapping for agriculture and urban planning.
+      </li>
+      <li style="margin-top: 1rem;">
+        <strong>Adaptive Traffic Monitoring System</strong><br />
+        Designed a smart traffic control algorithm that uses live camera input to adjust signal timings dynamically. Reduced average wait time and carbon emissions using OpenCV and rule-based AI logic.
+      </li>
+      <li style="margin-top: 1rem;">
+        <strong>NIT-AP EEE Department Website</strong><br />
+        Developed the official departmental website using HTML, CSS, and JavaScript. Integrated dynamic faculty profiles, student association updates, and a custom PDF viewer. Enhanced departmental visibility and streamlined information access.
+      </li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li>
+        <strong>Research Intern – NIT Warangal</strong><br />
+        <em>May 2024 – Jul 2024</em><br />
+        Developed a face recognition system using TensorFlow, achieving 93% accuracy. Preprocessed the LFW dataset, implemented CNN-based embedding models, and deployed a real-time recognition pipeline for practical testing.
+      </li>
+      <li style="margin-top: 1rem;">
+        <strong>Python Developer – Codespeedy</strong><br />
+        <em>Jul 2023 – Jul 2023</em><br />
+        Built GUI-based desktop applications using Tkinter, featuring email verification and biometric login integration. Delivered projects focusing on user-friendly interfaces and robust validation techniques.
+      </li>
+    </ul>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> C, C++, Java, Python</li>
+      <li><strong>Web:</strong> HTML, CSS, JavaScript, TypeScript, Node.js, Express.js</li>
+      <li><strong>Databases:</strong> PostgreSQL, MongoDB</li>
+      <li><strong>Tools:</strong> MATLAB, STM32, Arduino</li>
+      <li><strong>ML/AI:</strong> OpenCV, TensorFlow, Keras</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:saikeertisahu1972@gmail.com">saikeertisahu1972@gmail.com</a></p>
+    <p>Phone: 9346688096</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sai-keerti-sahukari" target="_blank">linkedin.com/in/sai-keerti-sahukari</a></p>
+    <p>GitHub: <a href="https://github.com/SaiKeertisahukari" target="_blank">github.com/SaiKeertisahukari</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Sai Keerti Sahukari. All rights reserved.
+  </footer>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => {
+            console.log('✅ Service Worker registered:', reg.scope);
+          })
+          .catch(err => {
+            console.error('❌ Service Worker registration failed:', err);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
